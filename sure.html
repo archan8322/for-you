@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Sure, Best Friend</title>
+  <link rel="stylesheet" href="styles.css">
+  <style>
+    /* Additional CSS for the hover effect */
+    @keyframes moveAround {
+      0% {
+        transform: translateX(0);
+      }
+      50% {
+        transform: translateX(20px);
+      }
+      100% {
+        transform: translateX(0);
+      }
+    }
+    .unreachable {
+      animation: moveAround 2s infinite;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>Can you wait for me? I won't disappoint. I'll try harder.</h1>
+    <div class="options">
+      <button onclick="goToYesWait()('yeswait')">Yes</button>
+      <button onmouseover="makeUnreachable()" onclick="handleResponse('nowait')" class="unreachable">No</button>
+    </div>
+    <div class="gif">
+      <img src="https://media.giphy.com/media/aZ4sQUpybai5y/giphy.gif" alt="Sure Best Friend GIF">
+    </div>
+  </div>
+  <script src="script.js"></script>
+  <script>
+    function makeUnreachable() {
+      // Function to make the button unreachable by randomly moving it
+      const noButton = document.querySelector('.unreachable');
+      noButton.style.position = 'absolute';
+      const screenWidth = window.innerWidth - noButton.clientWidth;
+      const screenHeight = window.innerHeight - noButton.clientHeight;
+      const randomX = Math.floor(Math.random() * screenWidth);
+      const randomY = Math.floor(Math.random() * screenHeight);
+      noButton.style.left = `${randomX}px`;
+      noButton.style.top = `${randomY}px`;
+    }
+  </script>
+</body>
+</html>
