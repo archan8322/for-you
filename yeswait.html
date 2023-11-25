@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>I Love You Too</title>
+  <link rel="stylesheet" href="styles.css">
+  <style>
+    /* Additional CSS for the blast animation */
+    @keyframes blastAnimation {
+      0% {
+        transform: scale(1);
+      }
+      50% {
+        transform: scale(1.5);
+      }
+      100% {
+        transform: scale(1);
+      }
+    }
+
+    /* Additional CSS for the crackers animation */
+    @keyframes crackersAnimation {
+      0% {
+        background-position: 0 0;
+      }
+      100% {
+        background-position: 100% 100%;
+      }
+    }
+
+    /* Apply blast animation to the whole page */
+    body {
+      animation: blastAnimation 2s ease-in-out;
+    }
+
+    /* Apply crackers animation to the whole page */
+    html {
+      animation: crackersAnimation 5s linear infinite;
+      background: linear-gradient(-45deg, #ffcc00, #ff6699, #33ccff, #cc99ff);
+      background-size: 400% 400%;
+      animation-direction: alternate;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>I love you too!</h1>
+    <div class="gif">
+      <img src="https://media.giphy.com/media/YkzQMAfpuH3qpt8410/giphy.gif" alt="Yes Wait Best Friend GIF">
+    </div>
+  </div>
+  <script src="script.js"></script>
+</body>
+</html>
